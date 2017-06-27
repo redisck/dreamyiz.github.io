@@ -8,11 +8,30 @@ for (v of (document.getElementsByClassName('follow-text'))) {
 }
 // 组合滚动点击
 function foo() {
-    scrollBy(0,1000);
+    scrollBy(0, 1000);
     for (v of (document.getElementsByClassName('follow-text'))) {
         // console.log(v);
         v.click();
     }
-        console.log('clicked');
+    console.log('clicked');
 }
-var a=setInterval(foo,3000)
+var a = setInterval(foo, 3000)
+
+// 自动感应滚动点击
+var a;
+document.body.onmouseleave = function () {
+    console.log('leave...');
+    function foo() {
+        scrollBy(0, 520);
+        for (v of (document.getElementsByClassName('follow-text'))) {
+            // console.log(v);
+            v.click();
+        }
+        console.log('clicked');
+    }
+    a = setInterval(foo, 3000)
+}
+document.body.onmouseenter = function () {
+    clearInterval(a);
+    console.log('enter...');
+}
