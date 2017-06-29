@@ -36,6 +36,6 @@ var scrl = "_ 关爱贫困地区的失学儿童 _______";
 function scrlsts() {
  scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
  document.title = scrl;
- setTimeout("scrlsts()", 600);
+ setTimeout("scrlsts()", 1000);
 }
 scrlsts()
