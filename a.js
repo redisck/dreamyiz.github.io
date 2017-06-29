@@ -1,3 +1,4 @@
+
 // 自动滚屏
 var a = setInterval('scrollBy(0,1)', 100)
 clearInterval(a)
