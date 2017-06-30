@@ -163,6 +163,9 @@ footer .love {
 }
 
 @media (min-width: 1000px) {
+.wrap {
+  width: 30vw;
+}  
   .phone main {
     height: 100vh;
   }
