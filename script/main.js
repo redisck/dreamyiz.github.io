@@ -31,21 +31,21 @@ document.addEventListener('DOMContentLoaded', function(){
       onTypingResumed: function() { }
     });
 
-    document.querySelector('.toggle').addEventListener('click', function() {
-      typed.toggle();
-    });
-    document.querySelector('.stop').addEventListener('click', function() {
-      typed.stop();
-    });
-    document.querySelector('.start').addEventListener('click', function() {
-      typed.start();
-    });
-    document.querySelector('.reset').addEventListener('click', function() {
-      typed.reset();
-    });
-    document.querySelector('.destroy').addEventListener('click', function() {
-      typed.destroy();
-    });
+    // document.querySelector('.toggle').addEventListener('click', function() {
+    //   typed.toggle();
+    // });
+    // document.querySelector('.stop').addEventListener('click', function() {
+    //   typed.stop();
+    // });
+    // document.querySelector('.start').addEventListener('click', function() {
+    //   typed.start();
+    // });
+    // document.querySelector('.reset').addEventListener('click', function() {
+    //   typed.reset();
+    // });
+    // document.querySelector('.destroy').addEventListener('click', function() {
+    //   typed.destroy();
+    // });
 
 
   });

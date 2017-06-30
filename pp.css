@@ -3,6 +3,7 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
+    cursor: default;
 }
 
 html {
@@ -12,7 +13,7 @@ html {
 body {
     display: block;
     color: black;
-    background-color: white;
+    background:     #d7f2ff url("image/bg_x.png") no-repeat 50% 100%;
     font-family: "Open Sans", arial, sans-serif;
     line-height: 1.5;
 }
@@ -136,4 +137,8 @@ border: solid 10px;
 }
 .word ul li{
     margin: 10px;
+}
+
+footer{
+    height: 30vh;
 }
