@@ -4,6 +4,7 @@
   border: 0;
   box-sizing: border-box;
   cursor: default;
+  overflow-x: hidden;
 }
 
 html {
@@ -19,6 +20,7 @@ body {
 }
 
 .phone main {
+  overflow-y: hidden;
   position: absolute;
   top: 0;
   background-image: url('image/lovemain.jpg');
@@ -59,12 +61,7 @@ p {
   letter-spacing: 1px;
 }
 
-button {
-  padding: 10px;
-  border-radius: 3px;
-  background: #E0E0E0;
-  border: #CCC 1px solid;
-}
+
 
 
 /* code for animated blinking cursor */
@@ -99,7 +96,8 @@ button {
 
 .content {
   margin-top: 40vh;
-  padding-top: 2em;
+  padding-top: 5em;
+  padding-bottom: 5em;
   text-align: center;
 }
 
@@ -130,7 +128,7 @@ button {
 .word ul {
   background-color: pink;
   width: 40vw;
-  margin: 10px auto;
+  margin: 5em auto;
   padding: 10px 60px;
   border: none;
   border-radius: 40px 10px;
@@ -151,10 +149,18 @@ footer {
 
 footer .love {
   margin: 80px auto;
-  padding-top: 80px;
 }
 
 .heart:before {
   content: '\2665';
   color: red;
+}
+
+@media (min-width: 1200px) {
+  .phone main {
+    height: 100vh;
+  }
+  .content {
+    margin-top: 100vh;
+  }
 }
