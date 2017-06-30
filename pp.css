@@ -24,7 +24,9 @@ body {
   position: absolute;
   top: 0;
   background-image: url('image/lovemain.jpg');
-  background-size: 100%;
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   height: 40vh;
   width: 100vw;
   -webkit-transition: background-image .6s ease-in-out;
@@ -48,7 +50,7 @@ p {
 }
 
 .wrap {
-  max-width: 500px;
+  max-width: 80vw;  
   margin: 150px auto;
 }
 
@@ -96,8 +98,8 @@ p {
 
 .content {
   margin-top: 40vh;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   text-align: center;
 }
 
@@ -108,17 +110,21 @@ p {
   border: 1px solid pink;
   box-shadow: 10px 5px 5px black;
 }
+.content .tumb img{
+  width: 100%;
+}
 
 .content .tumb:hover {
   border: 1px solid red;
 }
 
 .word {
-  width: 60vw;
-  margin: 10px auto;
 }
 
 .word>p {
+  width: 60vw;
+  margin: 10px auto;
+  
   padding: 15px 25px;
   border: solid 10px;
   /* the border will curve into a 'D' */
@@ -127,9 +133,9 @@ p {
 
 .word ul {
   background-color: pink;
-  width: 40vw;
-  margin: 5em auto;
-  padding: 10px 60px;
+  width: 80vw;
+  margin: 2em auto;
+  padding: 1em;
   border: none;
   border-radius: 40px 10px;
 }
@@ -148,7 +154,7 @@ footer {
 }
 
 footer .love {
-  margin: 80px auto;
+  margin: 30px auto;
 }
 
 .heart:before {
@@ -156,11 +162,18 @@ footer .love {
   color: red;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .phone main {
     height: 100vh;
   }
   .content {
     margin-top: 100vh;
   }
+  .word ul{
+    width: 50vw;
+   background-image: url("image/lovemaind.jpeg");
+   background-size:30% 200px;
+   background-position: bottom 30px right 18px; /*Positioning*/
+   background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}
 }
