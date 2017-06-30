@@ -1,156 +1,159 @@
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    cursor: default;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: default;
 }
 
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 body {
-    display: block;
-    color: black;
-    background:     #d7f2ff url("image/bg_x.png") no-repeat 50% 100%;
-    font-family: "Open Sans", arial, sans-serif;
-    line-height: 1.5;
+  display: block;
+  color: black;
+  background: #d7f2ff url("image/bg_x.png") no-repeat 50% 100%;
+  font-family: "Open Sans", arial, sans-serif;
+  line-height: 1.5;
 }
 
-.phone {}
-
 .phone main {
-    position: absolute;
-    top: 0;
-    background-image: url('image/lovemain.jpg');
-    background-size: 100%;
-    height: 40vh;
-    width: 100vw;
-    -webkit-transition: background-image .6s ease-in-out;
-    transition: background-image .6s ease-in-out;
-    box-shadow: inset 0 0 1em gold;
+  position: absolute;
+  top: 0;
+  background-image: url('image/lovemain.jpg');
+  background-size: 100%;
+  height: 40vh;
+  width: 100vw;
+  -webkit-transition: background-image .6s ease-in-out;
+  transition: background-image .6s ease-in-out;
+  box-shadow: inset 0 0 1em gold;
 }
 
 a {
-    text-decoration: none;
-    color: #666;
+  text-decoration: none;
+  color: #666;
 }
 
 a:hover {
-    color: #999;
+  color: #999;
 }
 
 p {
-    line-height: 2em;
-    margin: 0 0 20px;
-    text-align: center;
+  line-height: 2em;
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 .wrap {
-    max-width: 500px;
-    margin: 150px auto;
+  max-width: 500px;
+  margin: 150px auto;
 }
 
 .type-wrap {
-    margin: 10px auto;
-    padding: 20px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    border: #CCC 1px solid;
-    letter-spacing: 1px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  border: #CCC 1px solid;
+  letter-spacing: 1px;
 }
 
 button {
-    padding: 10px;
-    border-radius: 3px;
-    background: #E0E0E0;
-    border: #CCC 1px solid;
+  padding: 10px;
+  border-radius: 3px;
+  background: #E0E0E0;
+  border: #CCC 1px solid;
 }
 
 
 /* code for animated blinking cursor */
 
 .typed-cursor {
-    opacity: 1;
-    font-weight: 100;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    -ms-animation: blink 0.7s infinite;
-    -o-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+  opacity: 1;
+  font-weight: 100;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  -ms-animation: blink 0.7s infinite;
+  -o-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
 }
 
 @-webkit-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .typed-fade-out {
-    opacity: 0;
-    animation: 0;
-    transition: opacity .25s;
+  opacity: 0;
+  animation: 0;
+  transition: opacity .25s;
 }
 
 .content {
-    margin-top: 40vh;
-    padding-top: 2em;
-    text-align: center;
+  margin-top: 40vh;
+  padding-top: 2em;
+  text-align: center;
 }
 
 .content .tumb {
-    display: inline-block;
-    margin: 10px;
-    padding: 6px;
-    border: 1px solid pink;
-    box-shadow: 10px 5px 5px black;
+  display: inline-block;
+  margin: 10px;
+  padding: 6px;
+  border: 1px solid pink;
+  box-shadow: 10px 5px 5px black;
 }
 
 .content .tumb:hover {
-    border: 1px solid red;
+  border: 1px solid red;
 }
-.word{
-    width: 60vw;
-    margin: 10px auto;
-}
-.word>p{
-    padding: 15px 25px;
-border: solid 10px;
-  /* the border will curve into a 'D' */  
-  border-radius: 10px 40px 40px 10px;
 
+.word {
+  width: 60vw;
+  margin: 10px auto;
 }
-.word ul{
-    background-color: pink;
-    width: 40vw;
-    margin: 10px auto;
-    padding: 10px 60px;
-    border: none;
+
+.word>p {
+  padding: 15px 25px;
+  border: solid 10px;
+  /* the border will curve into a 'D' */
+  border-radius: 10px 40px 40px 10px;
+}
+
+.word ul {
+  background-color: pink;
+  width: 40vw;
+  margin: 10px auto;
+  padding: 10px 60px;
+  border: none;
   border-radius: 40px 10px;
 }
-.word ul li{
-    margin: 10px;
+
+.word ul li {
+  margin: 10px;
 }
 
-footer{
-    margin-top: 10px;
-    height: 30vh;
-    width: 100vw;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 3em;
+footer {
+  margin-top: 10px;
+  height: 30vh;
+  width: 100vw;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
 }
-footer .love{
-    margin: 80px auto;
-    padding-top: 80px;
+
+footer .love {
+  margin: 80px auto;
+  padding-top: 80px;
 }
+
 .heart:before {
   content: '\2665';
   color: red;
