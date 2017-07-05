@@ -18,6 +18,8 @@
             font-size: 16px;
             color: black;
             background: white;
+            background-image: url('http://image18-c.poco.cn/mypoco/myphoto/20170610/14/17520590920170610140951092_640.jpg?1200x798_120');
+            background-size: 100%;
         }
         
         #head {
@@ -42,6 +44,7 @@
         }
         
         .left-logo {
+            margin-top: 5px;
             margin-left: 5%;
         }
         
@@ -51,6 +54,8 @@
             border: 1px solid palevioletred;
             border-radius: 50%;
         }
+        
+        #main {}
     </style>
     <link rel="shortcut icon" href="http://image18-c.poco.cn/mypoco/qing/20170617/09/9281614770745773062_640x640_320.jpg">
 
@@ -64,16 +69,14 @@
                 <img src="http://image18-c.poco.cn/best_pocoers/20170629/6096201706291734195392625_157.jpg" alt="">
             </div>
         </div>
+        <div id="main">
+        </div>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue!',
-                message: 'Hello Vue!',
-                message: 'Hello Vue!',
-                message: 'Hello Vue!',
                 message: 'Hello Vue!'
             }
         })
