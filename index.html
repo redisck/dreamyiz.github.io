@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <head>
-    <title>|比|特|视|讯|</title>
+    <title>测试</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,76 +10,23 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
         
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
-            color: black;
-            background: white;
-            background-image: url('http://image18-c.poco.cn/mypoco/myphoto/20170610/14/17520590920170610140951092_640.jpg?1200x798_120');
-            background-size: 100%;
+            line-height: 1.5;
         }
-        
-        #head {
-            height: 40px;
-            width: 100%;
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #head::after {
-            content: "";
-            background: url('http://image15-c.poco.cn/best_pocoers/20130923/42882013092315021545923818.jpg');
-            opacity: 0.5;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            z-index: -1;
-            background-position: 25% 75%;
-        }
-        
-        .left-logo {
-            margin-top: 5px;
-            margin-left: 5%;
-        }
-        
-        .left-logo img {
-            height: 30px;
-            width: 30px;
-            border: 1px solid palevioletred;
-            border-radius: 50%;
-        }
-        
-        #main {}
     </style>
-    <link rel="shortcut icon" href="http://image18-c.poco.cn/mypoco/qing/20170617/09/9281614770745773062_640x640_320.jpg">
-
 </head>
 
 <body>
-
     <div id="app">
-        <div id="head">
-            <div class="left-logo">
-                <img src="http://image18-c.poco.cn/best_pocoers/20170629/6096201706291734195392625_157.jpg" alt="">
-            </div>
-        </div>
-        <div id="main">
+        <div class="main">
+            <p>你好，世界！</p>
         </div>
     </div>
-    <script src="https://unpkg.com/vue"></script>
     <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue!'
-            }
-        })
     </script>
 </body>
 
