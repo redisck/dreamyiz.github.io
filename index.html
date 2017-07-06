@@ -1,79 +1,494 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    <title>测试</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            color: black;
-            background: white;
-        }
-        
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 22px;
-            ;
-            ;
-            line-height: 1.5;
-        }
-        
-        .main {
-            width: 100%;
-        }
-        
-        .main img {
-            width: 100%;
-        }
-        
-        .foot {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 8%;
-            background: azure;
-        }
-        
-        .foot button {
-            height: 100%;
-            width: 23%;
-            font-size: 24px;
-            background: aliceblue;
-        }
-    </style>
-    <link rel="shortcut icon" href="http://image18-c.poco.cn/mypoco/qing/20170617/09/9281614770745773062_640x640_320.jpg">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>QQ</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="SUI/sm.min.css">
+	<link rel="stylesheet" href="SUI/font-down/iconfont.css">
+	<style>
+		#btn-title {
+			width: 40%;
+			margin: 0 auto;
+		}
+		
+		#dt-page,
+		#msg-page,
+		#ad-page {
+			animation: none !important;
+			-moz-animation: none !important;
+			-ms-animation: none !important;
+			-o-animation: none !important;
+			-webkit-animation: none !important;
+		}
+		
+		#self-info {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		#self-info img {
+			width: 100%;
+			height: 100%;
+		}
+		
+		#self-xinxi p {
+			margin: 0.5rem;
+		}
+		
+		#self-xinxi a {
+			line-height: 3rem;
+		}
+		
+		#panel-left-demo .panel-bottom {
+			position: absolute;
+			bottom: 0;
+			padding-bottom: 0.4rem;
+			margin-bottom: 0.3rem;
+		}
+		
+		.panel-bottom .panel-bottom-item {
+			margin: 0.4rem;
+			line-height: 1.2rem;
+		}
+		
+		.panel-bottom .panel-bottom-du {
+			font-size: 1.5rem;
+		}
+		
+		.panel-bottom .panel-bottom-du sup {
+			font-size: 0.8rem;
+		}
+		
+		.panel-bottom .zi {
+			margin-top: 1.6rem;
+		}
+		
+		.panel-bottom .last .area {
+			font-size: 0.7rem;
+			margin-left: 0.2rem;
+		}
+		
+		.list-cebianlan {
+			margin-top: 2.8rem;
+		}
+		
+		.touxiang {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-left: 0.6rem;
+		}
+		
+		.touxiang img {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.overflow {
+			overflow: hidden
+		}
+		
+		.mianban small {
+			margin-right: 0.5rem;
+			color: gray;
+			font-size: 0.6rem;
+		}
+		
+		.mianban .neirong {
+			color: gray;
+			font-size: 0.7rem;
+		}
+		
+		.index-main .item-content {
+			border-top: 1px solid lightgray;
+		}
+		
+		#self-level {
+			margin-left: 0.4rem;
+		}
+		
+		#night {
+			cursor: pointer;
+			padding-right: 0.2rem;
+			padding-left: 0.2rem;
+		}
+		#margin-top{
+			margin-top: 0;
+		}
+		#margin-top .item-content{
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+		}
+	</style>
 </head>
 
 <body>
-    <div id="app">
-        <div class="main">
-            <div id="a" class="photo">
-                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/34175702017063015502101_640.jpg?1904x2048_120" alt="">
-            </div>
+	<div class="page-group">
+		<!--消息页面-->
+		<div class="page page-current" id="msg-page">
+			<header class="bar bar-nav">
+				<a href="#" class="icon icon-me pull-left open-panel" data-panel='#panel-left-demo'></a>
+				<a href="#" class="icon icon-menu pull-right"></a>
+				<div class="buttons-row" id="btn-title">
+					<a href="#" class="tab-link active button">消息</a>
+					<a href="#" class="tab-link button">电话</a>
+				</div>
+			</header>
+			<div class="bar bar-header-secondary">
+				<div class="searchbar">
+					<a class="searchbar-cancel">取消</a>
+					<div class="search-input">
+						<label class="icon icon-search" for="search"></label>
+						<input type="search" id='search' placeholder='搜索...' />
+					</div>
+				</div>
+			</div>
+			<nav class="bar bar-tab">
+				<a href="#" class="tab-item active">
+					<span class="icon icon-message"></span>
+					<span class="tab-label">消息</span>
+				</a>
+				<a href="#ad-page" class="tab-item">
+					<span class="icon icon-friends"></span>
+					<span class="tab-label">联系人</span>
+				</a>
+				<a href="#dt-page" class="tab-item">
+					<span class="icon icon-star"></span>
+					<span class="tab-label">动态</span>
+				</a>
+			</nav>
+			<div class="content close-panel">
+				<div class="list-block" id="margin-top">
+					<ul class="index-main">
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+						<li class="item-content row">
+							<div class="touxiang pull-left col-19">
+								<img src="SUI/touxiang.png" alt="">
+							</div>
+							<div class="pull-left mianban col-80">
+								<div class="overflow"><span class="pull-left">bright星芒</span><small class="pull-right">下午2:25</small></div>
+								<div class="neirong">
+									哈哈哈哈哈哈
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-            <div id="b" class="photo">
-                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/34175702017063015463708_640.jpg?1796x2048_120" alt="">
-            </div>
-            <div id="c" class="photo">
-                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/341757020170630154709072_640.jpg?1365x2048_120" alt="">
-            </div>
-            <div id="d" class="photo">
-                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/341757020170630154727010_640.jpg?1417x2048_120" alt="">
-            </div>
-        </div>
-        <div class="foot">
-            <button onclick="">摄影</button>
-            <button>旅游</button>
-            <button>美食</button>
-            <button>模特</button>
-        </div>
-    </div>
-    <script>
-    </script>
+		<!--联系人页面-->
+		<div class="page" id="ad-page">
+			<header class="bar bar-nav">
+				<a href="#" class="icon icon-me pull-left open-panel" data-panel='#panel-left-demo'></a>
+				<a href="#" class="button button-link pull-right">添加</a>
+				<h1 class="title">联系人</h1>
+			</header>
+			<div class="bar bar-header-secondary">
+				<div class="searchbar">
+					<a class="searchbar-cancel">取消</a>
+					<div class="search-input">
+						<label class="icon icon-search" for="search"></label>
+						<input type="search" id='search' placeholder='搜索...' />
+					</div>
+				</div>
+			</div>
+			<nav class="bar bar-tab">
+				<a href="#msg-page" class="tab-item">
+					<span class="icon icon-message"></span>
+					<span class="tab-label">消息</span>
+				</a>
+				<a href="#" class="tab-item active">
+					<span class="icon icon-friends"></span>
+					<span class="tab-label">联系人</span>
+				</a>
+				<a href="#dt-page" class="tab-item">
+					<span class="icon icon-star"></span>
+					<span class="tab-label">动态</span>
+				</a>
+			</nav>
+			<div class="content close-panel">
+				<div class="content-block">
+					这里是联系人页面
+				</div>
+			</div>
+		</div>
+
+		<div class="page" id="dt-page">
+			<header class="bar bar-nav">
+				<a href="#" class="icon icon-me pull-left open-panel" data-panel='#panel-left-demo'></a>
+				<a href="#" class="button button-link pull-right">更多</a>
+				<h1 class="title">动态</h1>
+			</header>
+			<div class="bar bar-header-secondary">
+				<div class="searchbar">
+					<a class="searchbar-cancel">取消</a>
+					<div class="search-input">
+						<label class="icon icon-search" for="search"></label>
+						<input type="search" id='search' placeholder='搜索 电影/音乐/商品...' />
+					</div>
+				</div>
+			</div>
+			<nav class="bar bar-tab">
+				<a href="#msg-page" class="tab-item">
+					<span class="icon icon-message"></span>
+					<span class="tab-label">消息</span>
+				</a>
+				<a href="#ad-page" class="tab-item">
+					<span class="icon icon-friends"></span>
+					<span class="tab-label">联系人</span>
+				</a>
+				<a href="#" class="tab-item active">
+					<span class="icon icon-star"></span>
+					<span class="tab-label">动态</span>
+				</a>
+			</nav>
+			<div class="content close-panel">
+				<div class="content-block">
+					这里是动态页面
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-left panel-reveal theme-white" id='panel-left-demo'>
+		<div class="content-block">
+			<div class="row" id="self-xinxi">
+				<div id="self-info" class="col-20">
+					<img src="SUI/touxiang.png" alt="">
+				</div>
+				<div class="col-30">
+					<p>bright星芒</p>
+					<div id="self-level"></div>
+				</div>
+				<a href="#" class="icon icon-code col-20"></a>
+			</div>
+			<p class="col-60">“我与世界只差一个你</p>
+		</div>
+		<div class="list-block list-cebianlan">
+			<ul>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-huiyuan"></span> 了解会员特权</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-qianbao"></span> QQ钱包</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-diaosepan"></span> 个性装扮</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-collect"></span> 我的收藏</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-xiangce"></span> 我的相册</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-wenjian"></span> 我的文件</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><span class="iconfont icon-mingpian"></span> 我的名片夹</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content-block panel-bottom">
+			<div class="row">
+				<div class="col-30 panel-bottom-item zi">
+					<span class="icon icon-settings"></span> 设置
+				</div>
+				<div class="col-30 panel-bottom-item zi" id="night">
+					<span class="iconfont icon-yejian"></span> 夜间
+				</div>
+				<div class="col-30 panel-bottom-item last">
+					<div class="du panel-bottom-du">18 <sup>o</sup></div>
+					<div class="area">郑州</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
+<script src="SUI/zepto.min.js"></script>
+<script src="SUI/sm.min.js"></script>
+<script>
+	//url中第一个#后面的字符串是url的hash值，hash值不会随请求发送到服务器，
+	//仅仅是指导浏览器当页面加载完成时显示页面的哪个部分
+	//window.location.hash 可以访问当前页面的hash值
+	//window.onhashchange 可以监听hash的变化
+	//window.onhashchange = func;
+	//function func(){
+	//	console.log(window.location.hash);
+	//}
+
+	//当页面马上出现时触发
+	$(document).on("pageInit","#msg-page",function(e,pageId,$page){
+		console.log(pageId);
+		document.title = "消息"
+	})
+		$(document).on("pageInit","#ad-page",function(e,pageId,$page){
+			console.log(pageId);
+		document.title = "联系人"
+	})
+		$(document).on("pageInit","#dt-page",function(e,pageId,$page){
+			console.log(pageId);
+		document.title = "动态"
+	})
+	var myLevel = 51;
+	function refreshLevel(level){
+		var levArray = [];
+		while(level/4>=1){
+			levArray.unshift(level % 4);
+			level = Math.floor(level/4);
+		}
+		levArray.unshift(level);
+		for(var i=0;i<levArray.length;i++){
+			var picName;
+			switch(levArray.length-i){
+				case 3:
+				picName="SUI/sun.png"
+				break;
+				case 2:
+				picName="SUI/moon.png"
+				break;
+				case 1:
+				picName="SUI/star.png"
+				break;
+				default:
+				break;
+			}
+			for(var j=0;j<levArray[i];j++){
+				$("<img>").attr("src",picName)
+				.css("width","0.8rem")
+				.css("height","0.8rem")
+				.appendTo($("#self-level"))
+			}
+		}
+	}
+	refreshLevel(myLevel);
+
+	$("#night").click(function(){
+		$(this).toggleClass("button");
+		$("#panel-left-demo").toggleClass("theme-dark").toggleClass("theme-white");
+		$("body").toggleClass("theme-dark")
+	})
+	$.init();
+</script>
 
 </html>
