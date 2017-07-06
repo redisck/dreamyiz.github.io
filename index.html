@@ -16,18 +16,60 @@
         
         body {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
+            font-size: 22px;
+            ;
+            ;
             line-height: 1.5;
+        }
+        
+        .main {
+            width: 100%;
+        }
+        
+        .main img {
+            width: 100%;
+        }
+        
+        .foot {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 8%;
+            background: azure;
+        }
+        
+        .foot button {
+            height: 100%;
+            width: 23%;
+            font-size: 24px;
+            background: aliceblue;
         }
     </style>
     <link rel="shortcut icon" href="http://image18-c.poco.cn/mypoco/qing/20170617/09/9281614770745773062_640x640_320.jpg">
-
 </head>
 
 <body>
     <div id="app">
         <div class="main">
-            <p>你好，世界！</p>
+            <div id="a" class="photo">
+                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/34175702017063015502101_640.jpg?1904x2048_120" alt="">
+            </div>
+
+            <div id="b" class="photo">
+                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/34175702017063015463708_640.jpg?1796x2048_120" alt="">
+            </div>
+            <div id="c" class="photo">
+                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/341757020170630154709072_640.jpg?1365x2048_120" alt="">
+            </div>
+            <div id="d" class="photo">
+                <img src="http://image18-c.poco.cn/mypoco/myphoto/20170630/15/341757020170630154727010_640.jpg?1417x2048_120" alt="">
+            </div>
+        </div>
+        <div class="foot">
+            <button onclick="">摄影</button>
+            <button>旅游</button>
+            <button>美食</button>
+            <button>模特</button>
         </div>
     </div>
     <script>
