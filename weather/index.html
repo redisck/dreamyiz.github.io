@@ -64,18 +64,22 @@
         #mapEvent {
             position: fixed;
             bottom: 50px;
-            left: 30px;
+            list-style: none;
+            left: -80px;
+            background-color: rgba(176, 196, 222, .6);
+            border-radius: 10px 40px 40px 10px;
+            transition: .6s ease-in-out;
+            padding: 20px 50px
         }
         
-        #mapEvent {
-            list-style: none;
+        #mapEvent:hover {
+            left: 0px;
         }
         
         #mapEvent li {
             width: 50px;
             height: 50px;
             font-size: 40px;
-            background-color: palegreen;
             border: 3px solid purple;
             border-radius: 50%;
             margin: 5px;
@@ -84,7 +88,7 @@
         
         #mapEvent li:hover {
             cursor: pointer;
-            background-color: deeppink;
+            background-color: deeppink !important;
         }
     </style>
     <!--<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=D74e2300cc18a93aa99b8715eeb122e5&services=&t=20170707103901"></script>-->
@@ -102,13 +106,13 @@
 
             <div id="allmap"></div>
             <ul id='mapEvent'>
-                <li id='up' style="color:darkorchid">
+                <li id='up' style="color:darkorchid;background-color:darkgray">
                     +
                 </li>
-                <li id='down' style="color:blue">
+                <li id='down' style="color:blue;background-color:blanchedalmond">
                     -
                 </li>
-                <li id='now' style="color:aqua">
+                <li id='now' style="color:aqua;background-color:firebrick">
                     !
                 </li>
             </ul>
