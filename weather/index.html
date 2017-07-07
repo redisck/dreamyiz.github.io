@@ -120,8 +120,6 @@
             /* The following will size the video to fit the full container. Not necessary, just nice.*/
             /*z-index: 0;*/
         }
-        
-        .fullscreen-bg__video {}
     </style>
     <!--<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=D74e2300cc18a93aa99b8715eeb122e5&services=&t=20170707103901"></script>-->
 
@@ -154,7 +152,7 @@
 
 
             <div class="fullscreen-bg">
-                <video autoplay loop class="fullscreen-bg__video">
+                <video loop class="fullscreen-bg__video">
                     <source src="video.mp4" >
                 </video>
             </div>
@@ -237,14 +235,16 @@
                 console.log('now clicked');
             }
         )
-        $('.fullscreen-bg').hover(
-            function() {
-                console.log($('video').offset().top);
-                document.querySelector('video').play();
-            }
-        )
+
+        function videoPlay() {
+            // console.log($('video').offset().top);
+            document.querySelector('video').play();
+        }
+        document.querySelector('.cadetblue').addEventListener('mouseover', videoPlay, false);
     </script>
 
+    <script>
+    </script>
 </body>
 
 </html>
