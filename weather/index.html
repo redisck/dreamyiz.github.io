@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+    <script src="vendors/jquery.easings.min.js"></script>
+
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <style>
+        div {
+            text-align: center;
+        }
+        
+        .orange {
+            background: orange;
+        }
+        
+        .cadetblue {
+            background: cadetblue;
+        }
+        
+        .firebrick {
+            background: firebrick;
+        }
+        
+        .forestgreen {
+            background: forestgreen;
+        }
+        
+        .olivedrab {
+            background: olivedrab
+        }
+        
+        .peru {
+            background: peru
+        }
+        
+        .slateblue {
+            background: slateblue;
+        }
+        
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        
+        #mapEvent {
+            position: fixed;
+            bottom: 50px;
+            left: 30px;
+        }
+        
+        #mapEvent {
+            list-style: none;
+        }
+        
+        #mapEvent li {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            background-color: palegreen;
+            border: 3px solid purple;
+            border-radius: 50%;
+            margin: 5px;
+            transition: background-color .6s ease-in-out;
+        }
+        
+        #mapEvent li:hover {
+            cursor: pointer;
+            background-color: deeppink;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=D74e2300cc18a93aa99b8715eeb122e5&services=&t=20170707103901"></script>
+
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section orange">
+
+
+            <div id="allmap"></div>
+            <ul id='mapEvent'>
+                <li id='up' style="color:darkorchid">
+                    +
+                </li>
+                <li id='down' style="color:blue">
+                    -
+                </li>
+                <li id='now' style="color:aqua">
+                    !
+                </li>
+            </ul>
+
+        </div>
+        <div class="section cadetblue">Some section</div>
+        <div class="section">
+            <div class="slide forestgreen"> Slide 1 </div>
+            <div class="slide olivedrab"> Slide 2 </div>
+            <div class="slide peru"> Slide 3 </div>
+            <div class="slide slateblue"> Slide 4 </div>
+        </div>
+        <div class="section firebrick">Some section</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage();
+        });
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap"); // 创建Map实例
+        // map.centerAndZoom(new BMap.Point(114.020, 22.528), 12); // 初始化地图,设置中心点坐标和地图级别
+        map.centerAndZoom("深圳", 12);
+        map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+        map.addControl(new BMap.GeolocationControl());
+        map.setCurrentCity("深圳"); // 设置地图显示的城市 此项是必须设置的
+        // map.enableScrollWheelZoom(); //开启鼠标滚轮缩放
+        map.disableScrollWheelZoom()
+
+
+        // 添加带有定位的导航控件
+        var navigationControl = new BMap.NavigationControl({
+            // 靠左上角位置
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            // LARGE类型
+            type: BMAP_NAVIGATION_CONTROL_LARGE,
+            // 启用显示定位
+            enableGeolocation: true
+        });
+        map.addControl(navigationControl);
+        // 添加定位控件
+        var geolocationControl = new BMap.GeolocationControl();
+        geolocationControl.addEventListener("locationSuccess", function(e) {
+            // 定位成功事件
+            var address = '';
+            address += e.addressComponent.province;
+            address += e.addressComponent.city;
+            address += e.addressComponent.district;
+            address += e.addressComponent.street;
+            address += e.addressComponent.streetNumber;
+            // alert("当前定位地址为：" + address);
+        });
+        geolocationControl.addEventListener("locationError", function(e) {
+            // 定位失败事件
+            alert(e.message);
+        });
+        map.addControl(geolocationControl);
+
+        $('#up').click(
+            function() {
+                map.zoomIn();
+                console.log('up clicked');
+            }
+        )
+        $('#down').click(
+            function() {
+                map.zoomOut();
+                console.log('down clicked');
+            }
+        )
+        $('#now').click(
+            function() {
+                $('.BMap_geolocationIcon').click();
+                console.log('now clicked');
+            }
+        )
+    </script>
+
+</body>
+
+</html>
