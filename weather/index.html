@@ -21,6 +21,16 @@
 
     <link rel="shortcut icon" href="http://image18-c.poco.cn/mypoco/myphoto/20170706/17/17457293120170706171450013_640.jpg?1365x2048_120">
     <style>
+        body {
+            font-size: 8px;
+        }
+        
+        @media (min-width: 1000px) {
+            body {
+                font-size: 16px;
+            }
+        }
+        
         div {
             text-align: center;
         }
@@ -63,13 +73,13 @@
         
         #mapEvent {
             position: fixed;
-            bottom: 50px;
+            bottom: 1em;
             list-style: none;
-            left: -80px;
+            left: -4em;
             background-color: rgba(176, 196, 222, .6);
             border-radius: 10px 40px 40px 10px;
             transition: .6s ease-in-out;
-            padding: 20px 50px
+            padding: 1em 2em;
         }
         
         #mapEvent:hover {
@@ -77,16 +87,17 @@
         }
         
         #mapEvent li {
-            width: 50px;
-            height: 50px;
-            font-size: 40px;
+            width: 1em;
+            height: 1em;
+            font-size: 2em;
             border: 3px solid purple;
             border-radius: 50%;
             margin: 5px;
-            transition: background-color .6s ease-in-out;
+            transition: .6s ease-in-out;
         }
         
         #mapEvent li:hover {
+            text-align: left;
             cursor: pointer;
             background-color: deeppink !important;
         }
