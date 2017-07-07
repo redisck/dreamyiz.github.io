@@ -298,7 +298,8 @@
                     url: wurl,
                     dataType: "jsonp",
                     success: function(parsed_json) {
-                        console.log(parsed_json)
+                        str = JSON.stringify(parsed_json);
+                        console.log(str);
                     }
                 });
             });
