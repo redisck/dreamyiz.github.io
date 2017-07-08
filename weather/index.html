@@ -211,6 +211,63 @@
             box-shadow: 2px 4px 2px rgba(0, 140, 186, 0.5);
         }
         /* The Modal (background) */
+        /*sprite-steps*/
+        
+        .hi {
+            width: 50px;
+            height: 72px;
+            background-image: url("http://s.cdpn.io/79/sprite-steps.png");
+            -webkit-animation: play .8s steps(10) infinite;
+            -moz-animation: play .8s steps(10) infinite;
+            -ms-animation: play .8s steps(10) infinite;
+            -o-animation: play .8s steps(10) infinite;
+            animation: play .8s steps(10) infinite;
+        }
+        
+        @-webkit-keyframes play {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -500px;
+            }
+        }
+        
+        @-moz-keyframes play {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -500px;
+            }
+        }
+        
+        @-ms-keyframes play {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -500px;
+            }
+        }
+        
+        @-o-keyframes play {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -500px;
+            }
+        }
+        
+        @keyframes play {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -500px;
+            }
+        }
     </style>
     <!--<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=D74e2300cc18a93aa99b8715eeb122e5&services=&t=20170707103901"></script>-->
 
@@ -270,6 +327,9 @@
                 <img class="img2" src="http://image18-c.poco.cn/mypoco/myphoto/20170706/14/1746723872017070614410004_640.jpg?2047x2048_120" alt="校园回忆" width="300" height="200">
                 <img class="img3" src="http://image18-c.poco.cn/mypoco/myphoto/20170706/16/17467238720170706162221036_640.jpg?2048x2048_120" alt="校园回忆" width="300" height="200">
                 <img class="img4" src="http://image18-c.poco.cn/mypoco/myphoto/20170706/14/17467238720170706144120047_640.jpg?2048x1365_120" alt="校园回忆" width="300" height="200">
+
+                <!--<img src="sprite-steps.png" />-->
+                <div class="hi"></div>
 
 
                 <!-- The Modal -->
