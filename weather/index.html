@@ -27,8 +27,7 @@
         }
         
         body {
-            font-size: 32px;
-            ;
+            /*font-size: 32px;*/
         }
         
         @media (min-width: 1000px) {
@@ -125,8 +124,8 @@
         #weather {
             top: 60%;
             left: 26%;
-            width: 600px;
-            height: 500px;
+            width: 44%;
+            height: 33%;
             background: rgba(158, 44, 80, 0.4);
             position: relative;
             z-index: 50;
@@ -268,6 +267,19 @@
                 background-position: -500px;
             }
         }
+        
+        @media (max-width: 600px) {
+            #qqvideo {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 40% !important;
+            }
+            #weather {
+                width: 80%;
+                height: 30%;
+                left: 10%;
+            }
+        }
     </style>
     <!--<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=D74e2300cc18a93aa99b8715eeb122e5&services=&t=20170707103901"></script>-->
 
@@ -339,7 +351,7 @@
             <div class="slide slateblue"> 正在加班。。。 </div>
         </div>
         <div class="section firebrick">
-            <iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=u05223omr5o&tiny=0&auto=0" allowfullscreen></iframe>
+            <iframe id='qqvideo' frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=u05223omr5o&tiny=0&auto=0" allowfullscreen></iframe>
         </div>
     </div>
 
