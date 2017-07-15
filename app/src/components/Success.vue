@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 class="titleBar">登录</h1>
+    <h1 class="titleBar">登录成功</h1>
     <h2>登录成功</h2>
     <h2 style="margin-top:12vh">欢迎「用户名」登录</h2>
     <h2>你的邮箱是「」</h2>
