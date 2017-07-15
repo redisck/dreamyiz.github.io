@@ -1,13 +1,16 @@
 <template>
   <div class="hello">
-    <h1 class="titleBar">登录</h1>
+    <h1 class="titleBar">{{ mtitle }}</h1>
     <h2>用户登录</h2>
     <form>
-    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10">
-    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10">
+    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10" v-model="username">
+    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10" v-model="password">
     <input type="submit" value="登录">
     </form>
     <button>注册</button>
+    <!-- <p>debug msg :</p>
+    <p>{{ username }}</p>
+    <p>{{ password }}</p> -->
   </div>
 </template>
 
@@ -16,8 +19,10 @@ export default {
   name: 'login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      mtitle: 'Login'
+      // msg: 'Welcome to Your Vue.js App',
+      mtitle: '登录',
+      username: '',
+      password: ''
     }
   }
 }
@@ -123,5 +128,8 @@ button{
   width: 60vw;
   height: 8vh;
   background-color: rgb(136, 155, 173);
+}
+p{
+  font-size: 50px;
 }
 </style>

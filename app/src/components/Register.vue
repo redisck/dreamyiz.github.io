@@ -3,13 +3,14 @@
     <h1 class="titleBar">注册</h1>
     <h2>用户注册</h2>
     <form>
-    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10">
-    <span class='usericon'></span><input id="useremail" type="emall" placeholder="邮箱" maxlength="10">
-    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10">
-    <span class='passwordicon'></span><input id="password" type="password" placeholder="确认密码" maxlength="10">
+    <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="username">
+    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="useremail">
+    <span class='passwordicon'></span><input class="password" type="password" placeholder="密码" maxlength="20" v-model="passwordfirst">
+    <span class='passwordicon'></span><input id="password" class="password" type="password" placeholder="确认密码" maxlength="20" v-model="passwordsecond">
      <input type="submit" value="注册">
     </form>
     <!-- <button>注册</button> -->
+    <p>{{ passwordsame }}</p>
   </div>
 </template>
 
@@ -19,7 +20,16 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      mtitle: 'Login'
+      mtitle: 'Login',
+      username: '',
+      useremail: '',
+      passwordfirst: '',
+      passwordsecond: ''
+    }
+  },
+  computed: {
+    passwordsame: function () {
+      return (this.passwordfirst === this.passwordsecond) ? '' : '请输入两次相同的密码'
     }
   }
 }
@@ -90,7 +100,7 @@ span.passwordicon{
   margin-right: 5vw;
   /* border: 1px solid red; */
 }
-#password{
+.password{
   text-indent: 2vw;
   font-size: 50px;
   margin-top: 5vh;
@@ -125,5 +135,17 @@ button{
   width: 60vw;
   height: 8vh;
   background-color: rgb(136, 155, 173);
+}
+/* p:first-child{
+  margin-top: 5vh;
+} */
+p{
+  font-size: 50px;
+  color: red;
+  /* font-weight: small; */
+}
+
+input:invalid {
+  background: pink;
 }
 </style>
