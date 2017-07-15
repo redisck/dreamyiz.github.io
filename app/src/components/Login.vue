@@ -7,7 +7,10 @@
     <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10" v-model="password">
     <input type="submit" value="登录">
     </form>
+     <a href="#/register"> 
     <button>注册</button>
+     </a> 
+    
     <!-- <p>debug msg :</p>
     <p>{{ username }}</p>
     <p>{{ password }}</p> -->

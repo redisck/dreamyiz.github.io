@@ -5,8 +5,8 @@
     <form>
     <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="username">
     <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="useremail">
-    <span class='passwordicon'></span><input class="password" type="password" placeholder="密码" maxlength="20" v-model="passwordfirst">
-    <span class='passwordicon'></span><input id="password" class="password" type="password" placeholder="确认密码" maxlength="20" v-model="passwordsecond">
+    <span class='passwordicon'></span><input class="password" type="text" placeholder="密码" maxlength="20" v-model="passwordfirst">
+    <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="passwordsecond">
      <input type="submit" value="注册">
     </form>
     <!-- <button>注册</button> -->
