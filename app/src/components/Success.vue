@@ -2,8 +2,8 @@
   <div class="hello">
     <h1 class="titleBar">登录成功</h1>
     <h2>登录成功</h2>
-    <h2 style="margin-top:12vh">欢迎「 {{ loginuser[0].username }}」登录</h2>
-    <h2>你的邮箱是:「 {{ loginuser[0].email }} 」</h2>
+    <h2 style="margin-top:12vh">欢迎「 {{ loginuser.username }}」登录</h2>
+    <h2>你的邮箱是:「 {{ loginuser.email }} 」</h2>
        <!-- <h2>{{ loginuser }}</h2>    -->
     <!-- <button>注册</button> --> 
   </div>
@@ -24,7 +24,10 @@ export default {
   computed: {
     loginuser () {
       // return this.$store.state.todos.filter(todo => todo.done).length
-      return store.state.userlist.filter(user => user.login)
+      // console.log(store.state.userlist.filter(user => user.login) ? store.state.userlist.filter(user => user.login) : {username: 'test', email: 'a@b.com'})
+      console.log(store.state.userlist.filter(user => user.login)[0])
+      if (store.state.userlist.filter(user => user.login)[0]) return store.state.userlist.filter(user => user.login)[0]
+      return {username: '', email: ''}
     }
   }
 }

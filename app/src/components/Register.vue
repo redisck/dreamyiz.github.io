@@ -7,7 +7,7 @@
     <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="user.useremail">
     <span class='passwordicon'></span><input class="password" type="text" placeholder="密码" maxlength="20" v-model="passwordfirst">
     <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="user.password">
-     <button v-on:click="addUser(user)">注 册</button>
+     <button v-on:click="addUser()">注 册</button>
     </form>
     <!-- <button>注册</button> -->
     <p>{{ passwordsame }}</p>
@@ -15,8 +15,7 @@
 </template>
 
 <script>
-
-// import store from 'store'
+import store from '../store'
 
 export default {
   name: 'login',
@@ -33,6 +32,9 @@ export default {
   },
   methods: {
     addUser () {
+      store.state.userlist.push(this.user)
+      console.log(store.state.userlist)
+      window.location.href = '#/success'
     }
   },
   computed: {

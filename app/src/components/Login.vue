@@ -3,14 +3,15 @@
     <h1 class="titleBar">{{ mtitle }}</h1>
     <h2>用户登录</h2>
     <form>
-    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10" v-model="username">
-    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10" v-model="password">
-    <input type="submit" value="登录">
+    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10" v-model="muser.username">
+    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10" v-model="muser.password">
+    <!-- <input type="submit" value="登录"> -->
+    <button v-on:click="goLogin()">登录</button>
     </form>
      <a href="#/register"> 
     <button>注册</button>
      </a> 
-    
+    <!-- <h2>{{ toLogin }}</h2> -->
     <!-- <p>debug msg :</p>
     <p>{{ username }}</p>
     <p>{{ password }}</p> -->
@@ -18,14 +19,34 @@
 </template>
 
 <script>
+import store from '../store'
 export default {
   name: 'login',
   data () {
     return {
       // msg: 'Welcome to Your Vue.js App',
       mtitle: '登录',
-      username: '',
-      password: ''
+      muser: {
+        username: '',
+        password: ''
+      }
+    }
+  },
+  computed: {
+    toLogin (data) {
+      // return this.$store.state.todos.filter(todo => todo.done).length
+      return store.state.userlist.filter(user => user.username === data.muser.username && user.password === data.muser.password)
+    }
+  },
+  methods: {
+    goLogin: function () {
+      console.log(this.toLogin[0].username)
+      if (this.toLogin[0].username) {
+        this.toLogin[0].login = true
+        // store.commit('gologin')
+        window.location.href = '#/success'
+      }
+      console.log(this.toLogin[0].login)
     }
   }
 }

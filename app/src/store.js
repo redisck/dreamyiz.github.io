@@ -7,7 +7,7 @@ const store = new Vuex.Store({
   state: {
     isLogin: false,
     userlist: [
-      {username: 'Rob', email: 'ivsly@qq.com', password: '123', login: true}
+      {username: 'Rob', email: 'ivsly@qq.com', password: '123', login: false}
     ]
   },
   mutations: {
@@ -19,7 +19,10 @@ const store = new Vuex.Store({
       console.log(user)
     },
     login (state, user) {
-      state.userlist.push()
+      // state.userlist.push()
+    },
+    gologin () {
+
     }
   },
   getters: {
