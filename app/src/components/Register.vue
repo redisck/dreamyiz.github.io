@@ -3,11 +3,11 @@
     <h1 class="titleBar">注册</h1>
     <h2>用户注册</h2>
     <form>
-    <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="username">
-    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="useremail">
+    <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="user.username">
+    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="user.useremail">
     <span class='passwordicon'></span><input class="password" type="text" placeholder="密码" maxlength="20" v-model="passwordfirst">
-    <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="passwordsecond">
-     <input type="submit" value="注册">
+    <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="user.password">
+     <button v-on:click="addUser(user)">注 册</button>
     </form>
     <!-- <button>注册</button> -->
     <p>{{ passwordsame }}</p>
@@ -15,21 +15,31 @@
 </template>
 
 <script>
+
+// import store from 'store'
+
 export default {
   name: 'login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      mtitle: 'Login',
-      username: '',
-      useremail: '',
       passwordfirst: '',
-      passwordsecond: ''
+      user: {
+        username: '',
+        useremail: '',
+        password: '',
+        login: 'true'
+      }
+    }
+  },
+  methods: {
+    addUser () {
     }
   },
   computed: {
-    passwordsame: function () {
-      return (this.passwordfirst === this.passwordsecond) ? '' : '请输入两次相同的密码'
+    passwordsame: function (data) {
+      // console.log(this.passwordfirst)
+      // console.log(data.user.password)
+      return (this.passwordfirst === data.user.password) ? '' : '请输入两次相同的密码'
     }
   }
 }
