@@ -4,10 +4,10 @@
     <h2>用户注册</h2>
     <form>
     <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="user.username">
-    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="user.email">
+    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="user.useremail">
     <span class='passwordicon'></span><input class="password" type="text" placeholder="密码" maxlength="20" v-model="passwordfirst">
     <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="user.password">
-     <button v-on:click="maddUser()">注 册</button>
+     <button v-on:click="addUser()">注 册</button>
     </form>
     <!-- <button>注册</button> -->
     <p>{{ passwordsame }}</p>
@@ -24,7 +24,7 @@ export default {
       passwordfirst: '',
       user: {
         username: '',
-        email: '',
+        useremail: '',
         password: '',
         login: 'true'
       }
@@ -32,8 +32,6 @@ export default {
   },
   methods: {
     maddUser () {
-      console.log(this.user)
-      window.localStorage.setItem('currentUser', JSON.stringify(this.user))
       store.commit('register', this.user)
       console.log(store.state.userlist)
       window.location.href = '#/success'

@@ -23,12 +23,10 @@ export default {
   },
   computed: {
     loginuser () {
-      store.state.userlist.push(JSON.parse(localStorage.getItem('currentUser')))
       // return this.$store.state.todos.filter(todo => todo.done).length
       // console.log(store.state.userlist.filter(user => user.login) ? store.state.userlist.filter(user => user.login) : {username: 'test', email: 'a@b.com'})
       console.log(store.state.userlist.filter(user => user.login)[0])
-      if (!store.state.userlist.filter(user => user.login)[0]) return {username: '', email: ''}
-      console.log(store.state.userlist.filter(user => user.login)[0])
+      // if (!store.state.userlist.filter(user => user.login)[0]) return {username: '', email: ''}
       return store.state.userlist.filter(user => user.login)[0]
     }
   }

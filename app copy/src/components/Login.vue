@@ -1,49 +1,52 @@
 <template>
   <div class="hello">
-    <h1 class="titleBar">注册</h1>
-    <h2>用户注册</h2>
+    <h1 class="titleBar">{{ mtitle }}</h1>
+    <h2>用户登录</h2>
     <form>
-    <span class='usericon'></span><input id="username" name="username" type="text" placeholder="用户名" maxlength="20" v-model="user.username">
-    <span class='usericon'></span><input id="useremail" type="email" name="email" placeholder="邮箱" maxlength="30" v-model="user.email">
-    <span class='passwordicon'></span><input class="password" type="text" placeholder="密码" maxlength="20" v-model="passwordfirst">
-    <span class='passwordicon'></span><input id="password" class="password" type="text" placeholder="确认密码" maxlength="20" v-model="user.password">
-     <button v-on:click="maddUser()">注 册</button>
+    <span class='usericon'></span><input id="username" type="text" placeholder="用户名" maxlength="10" v-model="muser.username">
+    <span class='passwordicon'></span><input id="password" type="password" placeholder="密码" maxlength="10" v-model="muser.password">
+    <!-- <input type="submit" value="登录"> -->
+    <button v-on:click="goLogin()">登录</button>
     </form>
-    <!-- <button>注册</button> -->
-    <p>{{ passwordsame }}</p>
+     <a href="#/register"> 
+    <button>注册</button>
+     </a> 
+    <!-- <h2>{{ toLogin }}</h2> -->
+    <!-- <p>debug msg :</p>
+    <p>{{ username }}</p>
+    <p>{{ password }}</p> -->
   </div>
 </template>
 
 <script>
 import store from '../store'
-
 export default {
   name: 'login',
   data () {
     return {
-      passwordfirst: '',
-      user: {
+      // msg: 'Welcome to Your Vue.js App',
+      mtitle: '登录',
+      muser: {
         username: '',
-        email: '',
-        password: '',
-        login: 'true'
+        password: ''
       }
     }
   },
-  methods: {
-    maddUser () {
-      console.log(this.user)
-      window.localStorage.setItem('currentUser', JSON.stringify(this.user))
-      store.commit('register', this.user)
-      console.log(store.state.userlist)
-      window.location.href = '#/success'
+  computed: {
+    toLogin (data) {
+      // return this.$store.state.todos.filter(todo => todo.done).length
+      return store.state.userlist.filter(user => user.username === data.muser.username && user.password === data.muser.password)
     }
   },
-  computed: {
-    passwordsame: function (data) {
-      // console.log(this.passwordfirst)
-      // console.log(data.user.password)
-      return (this.passwordfirst === data.user.password) ? '' : '请输入两次相同的密码'
+  methods: {
+    goLogin: function () {
+      console.log(this.toLogin[0].username)
+      if (this.toLogin[0].username) {
+        this.toLogin[0].login = true
+        // store.commit('gologin')
+        window.location.href = '#/success'
+      }
+      console.log(this.toLogin[0].login)
     }
   }
 }
@@ -80,7 +83,7 @@ li {
 a {
   color: #42b983;
 }
-#username,#useremail{
+#username{
   text-indent: 2vw;
   font-size: 50px;
   margin-top: 5vh;
@@ -114,7 +117,7 @@ span.passwordicon{
   margin-right: 5vw;
   /* border: 1px solid red; */
 }
-.password{
+#password{
   text-indent: 2vw;
   font-size: 50px;
   margin-top: 5vh;
@@ -150,16 +153,7 @@ button{
   height: 8vh;
   background-color: rgb(136, 155, 173);
 }
-/* p:first-child{
-  margin-top: 5vh;
-} */
 p{
   font-size: 50px;
-  color: red;
-  /* font-weight: small; */
-}
-
-input:invalid {
-  background: pink;
 }
 </style>

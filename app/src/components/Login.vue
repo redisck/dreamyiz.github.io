@@ -44,9 +44,12 @@ export default {
       if (this.toLogin[0].username) {
         this.toLogin[0].login = true
         // store.commit('gologin')
+        console.log(JSON.stringify(this.toLogin[0]))
+        window.localStorage.setItem('currentUser', JSON.stringify(this.toLogin[0]))
         window.location.href = '#/success'
       }
-      console.log(this.toLogin[0].login)
+      // console.log(this.toLogin[0].login)
+      // console.log(JSON.stringify(this.toLogin[0]))
     }
   }
 }
