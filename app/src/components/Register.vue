@@ -31,8 +31,8 @@ export default {
     }
   },
   methods: {
-    addUser () {
-      store.state.userlist.push(this.user)
+    maddUser () {
+      store.commit('register', this.user)
       console.log(store.state.userlist)
       window.location.href = '#/success'
     }

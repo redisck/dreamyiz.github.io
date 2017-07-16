@@ -26,8 +26,8 @@ export default {
       // return this.$store.state.todos.filter(todo => todo.done).length
       // console.log(store.state.userlist.filter(user => user.login) ? store.state.userlist.filter(user => user.login) : {username: 'test', email: 'a@b.com'})
       console.log(store.state.userlist.filter(user => user.login)[0])
-      if (store.state.userlist.filter(user => user.login)[0]) return store.state.userlist.filter(user => user.login)[0]
-      return {username: '', email: ''}
+      // if (!store.state.userlist.filter(user => user.login)[0]) return {username: '', email: ''}
+      return store.state.userlist.filter(user => user.login)[0]
     }
   }
 }
